@@ -7,7 +7,7 @@ function d3jsPlot(){
     // Set the dimension
     var margin = {top: 20, right: 20, bottom: 50, left: 70},
                     width = 1300 - margin.left - margin.right,
-                    height = 300 - margin.top - margin.bottom;
+                    height = 500 - margin.top - margin.bottom;
 
     var svg = d3.select("#d3js_Plot").append("svg")
                                 .attr("width", width + margin.left + margin.right)
@@ -24,7 +24,7 @@ function d3jsPlot(){
         .domain([0, 20]);
 
     var hexbin = d3.hexbin()
-        .radius(20)
+        .radius(12)
         .extent([[0, 0], [width, height]]);
 
     var x = d3.scaleLinear()
@@ -51,12 +51,20 @@ function d3jsPlot(){
         .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
         .attr("fill", function(d) { return color(d.length); });
 
-    svg.append("g")
-        .attr("class", "axis axis--y")
-        .call(d3.axisLeft(y).tickSizeOuter(-width));
+    svg.append("svg:image")
+        .attr("xlink:href", "layout.png")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height)
+        .attr("align","center");
 
-    svg.append("g")
-        .attr("class", "axis axis--x")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x).tickSizeOuter(-height));
+    // svg.append("g")
+    //     .attr("class", "axis axis--y")
+    //     .call(d3.axisLeft(y).tickSizeOuter(-width));
+
+    // svg.append("g")
+    //     .attr("class", "axis axis--x")
+    //     .attr("transform", "translate(0," + height + ")")
+    //     .call(d3.axisBottom(x).tickSizeOuter(-height));
 }
+
+// setInterval(d3jsPlot, 2000); // Every 2 seconds

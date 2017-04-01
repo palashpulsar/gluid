@@ -12,21 +12,6 @@ html, body{
 	height: inherit;
 }
 
-#graphPlot{
-	height: 40%;
-	width: 100%;
-}
-
 .ui-content{
 	height: inherit;
-}
-
-#gpxPlot{
-	height: 50%;
-	width: 93%;
-}
-
-#d3js_Plot{
-	height: 40%;
-	width: 100%;
 }
