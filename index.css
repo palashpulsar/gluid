@@ -1,0 +1,32 @@
+.hexagon {
+  stroke: #000;
+  stroke-width: 0.5px;
+}
+
+html, body{
+	height: 100%;
+	width: 100%;
+	}
+
+#layoutPlot{
+	height: inherit;
+}
+
+#graphPlot{
+	height: 40%;
+	width: 100%;
+}
+
+.ui-content{
+	height: inherit;
+}
+
+#gpxPlot{
+	height: 50%;
+	width: 93%;
+}
+
+#d3js_Plot{
+	height: 40%;
+	width: 100%;
+}
