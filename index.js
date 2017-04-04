@@ -16,9 +16,9 @@ function d3jsPlot(){
                                 .attr("transform",
                                         "translate(" + margin.left + "," + margin.top + ")");
 
-    var randomX = d3.randomNormal(width / 2, 80),
-        randomY = d3.randomNormal(height / 2, 80),
-        points = d3.range(2000).map(function() { return [randomX(), randomY()]; });
+    var randomX = d3.randomNormal(width / 2, 65),
+        randomY = d3.randomNormal(height / 2, 65),
+        points = d3.range(1000).map(function() { return [randomX(), randomY()]; });
 
     var color = d3.scaleSequential(d3.interpolateLab("white", "steelblue"))
         .domain([0, 20]);
@@ -56,6 +56,8 @@ function d3jsPlot(){
         .attr("width", width + margin.left + margin.right)
         .attr("height", height)
         .attr("align","center");
+
+    // console.log(hexbin.centers());
 
     // svg.append("g")
     //     .attr("class", "axis axis--y")
